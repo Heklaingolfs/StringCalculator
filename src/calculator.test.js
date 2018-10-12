@@ -27,3 +27,15 @@ it("should return the sum for three numbers in the string", () => {
 it("should handel newlines in string", () => {
     expect(add("10,4\n9")).toBe(23);
 });
+
+it("should not allow negative numbers", () => {
+    expect(add("-4")).toBe("");
+});
+
+it("should not allow negative numbers", () => {
+    expect(add("9,-4")).toBe(9);
+});
+
+it("should not allow negative numbers", () => {
+    expect(add("10,-4, 5, -6")).toBe(15);
+});
