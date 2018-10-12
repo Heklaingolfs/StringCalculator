@@ -19,3 +19,7 @@ it("should return the sum for two numbers in the string", () => {
 it("should return the sum for two numbers in the string", () => {
     expect(add("10,4")).toBe(14);
 });
+
+it("should return the sum for three numbers in the string", () => {
+    expect(add("10,4,9")).toBe(23);
+});
