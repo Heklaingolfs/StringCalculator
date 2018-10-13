@@ -62,5 +62,5 @@ it("should not allow multiple negative numbers", () => {
 });
 
 it("should not allow numbers larger than 1000", () => {
-    expect(add("2, 1000")).toBe(2);
+    expect(add("2, 1001")).toBe(2);
 });
