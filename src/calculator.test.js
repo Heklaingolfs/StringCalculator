@@ -64,3 +64,15 @@ it("should not allow multiple negative numbers", () => {
 it("should not allow numbers larger than 1000", () => {
     expect(add("2, 1001")).toBe(2);
 });
+
+it("should not allow numbers larger than 1000", () => {
+    expect(add("1000")).toBe(1000);
+});
+
+it("should not allow numbers larger than 1000", () => {
+    expect(add("1001")).toBe(0);
+});
+
+it("should not allow numbers larger than 1000", () => {
+    expect(add("1001, 7000, 3")).toBe(3);
+});
