@@ -60,3 +60,7 @@ it("should not allow multiple negative numbers", () => {
         expect(e.message).toBe("Negatives not allowed: -5, -8");
     }
 });
+
+it("should not allow numbers larger than 1000", () => {
+    expect(add("2, 1000")).toBe(2);
+});
