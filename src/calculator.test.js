@@ -50,6 +50,13 @@ it("should not allow any negative number", () => {
     }
 });
 
-it("should not allow negative numbers", () => {
-    expect(add("10,-4,5,-6")).toThrowError("Negatives not allowed: -4,-6");
+it("should not allow multiple negative numbers", () => {
+    try {
+        add("-5, 6, -8, 4");
+        // Vill að testið faili hér
+        expect(true).toBe(false);
+    }
+    catch(e) {
+        expect(e.message).toBe("Negatives not allowed: -5,-8");
+    }
 });
