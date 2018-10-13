@@ -9,10 +9,13 @@ function add(number){
     var numberlist = noNewLine.split(",");
     var sum = 0;
     for(var i = 0; i < numberlist.length; i++) {
+        // Kanna negative tölur
+        if (Number(numberlist[i]) < 0) {
+            throw new Error(`Negatives not allowed: ${numberlist[i]}`);
+        }
         sum += Number(numberlist[i]);
     }
     return sum;
 };
-
 
 module.exports = add;

@@ -28,14 +28,28 @@ it("should handel newlines in string", () => {
     expect(add("10,4\n9")).toBe(23);
 });
 
-it("should not allow negative numbers", () => {
-    expect(add("-4")).toBe("");
+it("should not allow a single negative number", () => {
+    try {
+        add("-5");
+        // Vill að testið faili hér
+        expect(true).toBe(false);
+    }
+    catch(e) {
+        expect(e.message).toBe("Negatives not allowed: -5");
+    }
+});
+
+it("should not allow any negative number", () => {
+    try {
+        add("-5, 6");
+        // Vill að testið faili hér
+        expect(true).toBe(false);
+    }
+    catch(e) {
+        expect(e.message).toBe("Negatives not allowed: -5");
+    }
 });
 
 it("should not allow negative numbers", () => {
-    expect(add("9,-4")).toBe(9);
-});
-
-it("should not allow negative numbers", () => {
-    expect(add("10,-4, 5, -6")).toBe(15);
+    expect(add("10,-4,5,-6")).toThrowError("Negatives not allowed: -4,-6");
 });
