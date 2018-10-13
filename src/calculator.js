@@ -1,12 +1,18 @@
 function add(number){
 
-    if(number == "" || number == "\n")
-    {
+    if(number == "" || number == "\n") {
         return 0;
     }
+
+    if(number[0] == "/") {
+        // Fann aðferð hér "https://stackoverflow.com/questions/494035/how-do-you-use-a-variable-in-a-regular-expression"
+        var delimeter = number[2];
+        var re = new RegExp(delimeter,"g");
+        number = number.replace(re, ",");
+    }
     // Fann aðferð hér "https://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string-in-javascript"
-    var noNewLine = number.replace(/\n/g, ",");
-    var numberlist = noNewLine.split(",");
+    number = number.replace(/\n/g, ",");
+    var numberlist = number.split(",");
     var sum = 0;
     var negarray = [];
 
