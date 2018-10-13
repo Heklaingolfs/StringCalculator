@@ -116,3 +116,26 @@ it("should handle all of the tests", () => {
 it("should handle all of the tests", () => {
     expect(add("//+\n100+6\n 6, ")).toBe(112);
 });
+
+it("should not allow multiple negative numbers", () => {
+    try {
+        add("-5, 6, -8, 4000 n\ 7");
+        // Vill að testið faili hér
+        expect(true).toBe(false);
+    }
+    catch(e) {
+        expect(e.message).toBe("Negatives not allowed: -5, -8");
+    }
+});
+
+it("should not allow multiple negative numbers", () => {
+    try {
+        add("//+\n100+6\n 6,-8,4000 n\ 7");
+        // Vill að testið faili hér
+        expect(true).toBe(false);
+    }
+    catch(e) {
+        expect(e.message).toBe("Negatives not allowed: -8");
+    }
+});
+
