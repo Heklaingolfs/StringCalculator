@@ -76,3 +76,15 @@ it("should not allow numbers larger than 1000", () => {
 it("should not allow numbers larger than 1000", () => {
     expect(add("1001, 7000, 3")).toBe(3);
 });
+
+it("should handle other delimiter", () => {
+    expect(add("//;\n1;2")).toBe(3);
+});
+
+it("should handle other delimiter", () => {
+    expect(add("//;\n20")).toBe(20);
+});
+
+it("should handle other delimiter", () => {
+    expect(add("//;\n100; 6\n 6")).toBe(112);
+});
