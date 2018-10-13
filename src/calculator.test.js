@@ -57,6 +57,6 @@ it("should not allow multiple negative numbers", () => {
         expect(true).toBe(false);
     }
     catch(e) {
-        expect(e.message).toBe("Negatives not allowed: -5,-8");
+        expect(e.message).toBe("Negatives not allowed: -5, -8");
     }
 });
