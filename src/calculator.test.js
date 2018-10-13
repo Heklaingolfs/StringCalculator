@@ -92,3 +92,27 @@ it("should handle other delimiter", () => {
 it("should handle other delimiter", () => {
     expect(add("//<\n100<6\n 6")).toBe(112);
 });
+
+it("should handle other delimiter", () => {
+    expect(add("//(\n100(6\n 6")).toBe(112);
+});
+
+it("should handle all of the tests", () => {
+    expect(add("//)\n100)6\n 6, ")).toBe(112);
+});
+
+it("should handle all of the tests", () => {
+    expect(add("//[\n100[6\n 6, ")).toBe(112);
+});
+
+it("should handle all of the tests", () => {
+    expect(add("//]\n100]6\n 6, ")).toBe(112);
+});
+
+it("should handle all of the tests", () => {
+    expect(add("//*\n100*6\n 6, ")).toBe(112);
+});
+
+it("should handle all of the tests", () => {
+    expect(add("//+\n100+6\n 6, ")).toBe(112);
+});
